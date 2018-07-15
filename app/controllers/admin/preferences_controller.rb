@@ -15,9 +15,15 @@ class Admin::PreferencesController < ApplicationController
     @preference = Preference.create(song_sort_order: params[:song_sort_order], artist_sort_order: params[:artist_sort_order], allow_create_artists: params[:allow_create_artists], allow_create_songs: params[:allow_create_songs])
   end
 
-  def edit
+  def update
+    @preference = Preference.find(params[:id])
+    @preference.update(preference_params)
+    redirect_to admin_preferences_path
   end
 
-  def update
+  private
+
+  def preference_params
+   params.require(:preference).permit(:allow_create_songs, :allow_create_artists, :song_sort_order, :artist_sort_order)
   end
 end
