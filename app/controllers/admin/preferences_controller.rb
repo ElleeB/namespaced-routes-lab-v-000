@@ -13,8 +13,6 @@ class Admin::PreferencesController < ApplicationController
 
   def create
     @preference = Preference.create(song_sort_order: params[:song_sort_order], artist_sort_order: params[:artist_sort_order], allow_create_artists: params[:allow_create_artists], allow_create_songs: params[:allow_create_songs])
-
-    # redirect_to admin_preferences_path
   end
 
   def edit
