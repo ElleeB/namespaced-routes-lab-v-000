@@ -1,5 +1,5 @@
 <h2> Admin Preferences </2>
 <br>
 <% @preference.attributes.each do |k,v| %>
-  <h3><p> <%= {} %>: <%= v %> </p></h3>
+  <h3><p> <%= "#{k.to_s.titlecase}:" "#{v}" %> </p></h3>
 <% end %>
