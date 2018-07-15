@@ -1,5 +1,6 @@
-<h2> Admin Preferences </2>
-<br>
-<% @preference.attributes.each do |k,v| %>
-  <h3><p> <%= "#{k.to_s.titlecase}:" "#{v}" %> </p></h3>
-<% end %>
+<h2> Admin Preferences </h2>
+
+<h4><p>Artist Sort Order: <%= @preference.artist_sort_order %> </p></h4>
+<h4><p>Song Sort Order: <%= @preference.song_sort_order %> </p></h4>
+<h4><p>Create Artists Permission: <%= @preference.allow_create_artists %> </p></h4>
+<h4><p>Create Songs Permission: <%= @preference.allow_create_songs %> </p></h4>
